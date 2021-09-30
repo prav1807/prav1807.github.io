@@ -1,0 +1,2155 @@
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.demo-icon {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* You can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+::selection {
+  background-color: #2b2b28;
+  color: #ffffff;
+}
+/* Scroller */
+::-webkit-scrollbar {
+  width: 8px;
+  display: none;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #181818;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2b2b28;
+}
+.image-hidden {
+  background-size: 0%;
+}
+.hide {
+  opacity: 0;
+}
+.hide.revealed {
+  opacity: 1;
+}
+.hide.reveal-slide {
+  top: 0;
+  opacity: 1;
+}
+.hide.active-page {
+  opacity: 1;
+  display: grid;
+}
+.slide-up {
+  top: 0 !important;
+}
+.down {
+  transform: translateY(30rem);
+}
+.down.up {
+  transform: translateY(0);
+}
+.nav-bar-close {
+  opacity: 0;
+}
+.nav-bar-close.nav-bar-opened {
+  opacity: 1;
+}
+.menu-close {
+  opacity: 0;
+  transform: translateY(2em);
+}
+.menu-close.menu-opened {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card.not-rotate {
+  transform: rotate(0) !important;
+}
+.hidden {
+  opacity: 0;
+  transform: translate3d(0, 30%, 0) scaleY(1.2) skewY(3deg);
+}
+.hidden.visible {
+  opacity: 1;
+  transform: translateZ(0) scaleY(1) skewY(0deg);
+}
+.item.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+@keyframes slide-down {
+  0% {
+    top: -2rem;
+    opacity: 1;
+  }
+  50% {
+    top: -1rem;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes scrolling {
+  0% {
+    opacity: 1;
+    transform: translate(0%);
+  }
+  40% {
+    transform: translate(100%);
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+    transform: translate(-100%);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0%);
+  }
+}
+/*######################### HTML STARTING TAG #####################*/
+html {
+  scroll-behavior: smooth;
+  /*######################### HTML ENDING TAG #####################*/
+}
+html body {
+  background-color: #000000;
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto;
+  grid-template-areas: "head" "body";
+  height: 100vh;
+  /*######################### BODY ENDING TAG #####################*/
+}
+html body img[alt="www.000webhost.com"] {
+  display: none !important;
+}
+html body .top-bar {
+  position: fixed;
+  z-index: 85;
+  top: 0;
+  width: -webkit-fill-available;
+  display: grid;
+  grid-template-areas: "logo icon";
+  margin: 1.2rem 1rem;
+  position: absolute;
+  top: -4rem;
+  transition: all 2s cubic-bezier(1, 0, 0, 1) 0ms, padding 500ms cubic-bezier(1, 0, 0, 1) 0ms;
+}
+@media only screen and (min-width: 768px) {
+  html body .top-bar {
+    margin: 1.5rem 2rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body .top-bar {
+    margin: 2rem 3rem;
+  }
+}
+html body .top-bar .block-logo {
+  grid-area: logo;
+  justify-self: start;
+  align-self: center;
+  font-family: 'Jost', sans-serif;
+}
+html body .top-bar .block-logo a {
+  color: #000000;
+  text-decoration: none;
+}
+html body .top-bar .block-logo a span {
+  font-size: 0.9rem;
+}
+@media only screen and (min-width: 768px) {
+  html body .top-bar .block-logo a span {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body .top-bar .block-logo a span {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body .top-bar .block-logo a span {
+    font-size: 1.8rem;
+  }
+}
+html body .top-bar .block-logo a .logo-bold {
+  font-weight: 800;
+}
+html body .top-bar .block-logo a .logo-regular {
+  font-weight: 400;
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  html body .top-bar .block-logo a .logo-regular {
+    display: inline-block;
+  }
+}
+html body .top-bar .block-icon {
+  grid-area: icon;
+  justify-self: end;
+  height: 0;
+  padding: 0.05rem;
+}
+@media only screen and (min-width: 768px) {
+  html body .top-bar .block-icon {
+    padding: 0rem;
+  }
+}
+html body .top-bar .block-icon i {
+  font-size: 1.4rem;
+  color: #000000;
+  transition: all 0.5s ease;
+}
+@media only screen and (min-width: 768px) {
+  html body .top-bar .block-icon i {
+    font-size: 1.6rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body .top-bar .block-icon i {
+    font-size: 1.7rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body .top-bar .block-icon i {
+    font-size: 2.5rem;
+  }
+}
+html body .top-bar .block-icon i:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+html body .nav-bar {
+  grid-area: head;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 80;
+  display: grid;
+  grid-template-areas: "." "nav" "foot";
+  grid-template-rows: 1fr 2fr 1fr;
+  background: #fff;
+  transition: all 0.4s ease-in;
+  visibility: hidden;
+}
+html body .nav-bar .content {
+  align-self: center;
+  justify-self: center;
+  grid-area: nav;
+}
+html body .nav-bar .content .nav ul {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(4, 5rem);
+  padding: 0;
+}
+@media only screen and (min-width: 768px) {
+  html body .nav-bar .content .nav ul {
+    grid-template-columns: repeat(4, 10rem);
+    grid-template-rows: auto;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body .nav-bar .content .nav ul {
+    grid-template-columns: repeat(4, 15rem);
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body .nav-bar .content .nav ul {
+    grid-template-columns: repeat(4, 25rem);
+  }
+}
+html body .nav-bar .content .nav ul li {
+  list-style: none;
+  text-align: center;
+  transition: 0.8s opacity cubic-bezier(0.165, 0.84, 0.44, 1), 0.8s transform cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+html body .nav-bar .content .nav ul li:nth-child(1) {
+  transition-delay: 0ms;
+}
+html body .nav-bar .content .nav ul li:nth-child(2) {
+  transition-delay: 125ms;
+}
+html body .nav-bar .content .nav ul li:nth-child(3) {
+  transition-delay: 250ms;
+}
+html body .nav-bar .content .nav ul li:nth-child(4) {
+  transition-delay: 375ms;
+}
+html body .nav-bar .content .nav ul li a {
+  color: #000000;
+  opacity: 0.9;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.5rem 3rem;
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+@media only screen and (min-width: 768px) {
+  html body .nav-bar .content .nav ul li a {
+    padding: 0.5rem 1rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body .nav-bar .content .nav ul li a {
+    font-size: 2rem;
+    padding: 0.5rem 3rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body .nav-bar .content .nav ul li a {
+    font-size: 2.5rem;
+  }
+}
+html body .nav-bar .content .nav ul li a:hover {
+  letter-spacing: 2px;
+}
+@media only screen and (min-width: 1366px) {
+  html body .nav-bar .content .nav ul li a:hover {
+    letter-spacing: 7px;
+  }
+}
+html body .nav-bar .footer {
+  grid-area: foot;
+  align-self: end;
+  justify-self: center;
+}
+html body .nav-bar .footer .text {
+  padding: 0.5rem;
+  font-size: 0.8rem;
+}
+@media only screen and (min-width: 1366px) {
+  html body .nav-bar .footer .text {
+    font-size: 1rem;
+    padding: 2rem;
+  }
+}
+html body .bottom-bar {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 3rem 0;
+  z-index: 79;
+}
+@media only screen and (min-width: 1366px) {
+  html body .bottom-bar {
+    margin: 3rem 2rem;
+  }
+}
+html body .bottom-bar .block-scroll {
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  display: grid;
+  grid-template-areas: "scroll";
+}
+html body .bottom-bar .block-scroll .container {
+  grid-area: scroll;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  padding: 0 1rem;
+  transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.3s;
+}
+html body .bottom-bar .block-scroll .container:hover {
+  cursor: pointer;
+}
+html body .bottom-bar .block-scroll .container span {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+@media only screen and (min-width: 1366px) {
+  html body .bottom-bar .block-scroll .container span {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body .bottom-bar .block-scroll .container span {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body .bottom-bar .block-scroll .container span {
+    font-size: 1.3rem;
+  }
+}
+html body header {
+  background-color: #ffffff;
+  grid-area: head;
+  height: 100vh;
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  transform: translate3d(0, 0, 0) skewY(0);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 2.5s ease-in-out, background-position 0.5s ease;
+  background-image: url('../img/header.jpg');
+  background-position: left top;
+  background-size: 200%;
+  background-repeat: no-repeat;
+}
+@media only screen and (min-width: 768px) {
+  html body header {
+    background-size: 125%;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body header {
+    background-size: 90%;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body header {
+    background-size: 70%;
+  }
+}
+html body header .block-content {
+  align-self: center;
+  justify-self: center;
+}
+html body header .block-content .block-avatar {
+  justify-self: center;
+  display: grid;
+  transition: all 3.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+html body header .block-content .block-avatar img {
+  width: 5rem;
+  justify-self: center;
+}
+@media only screen and (min-width: 1366px) {
+  html body header .block-content .block-avatar img {
+    width: 7rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body header .block-content .block-avatar img {
+    width: 10rem;
+  }
+}
+html body header .block-content .block-name {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  position: relative;
+  top: 3rem;
+  margin-bottom: 0.1rem;
+  transform: scale(1.1);
+  transition: all 2s ease-in-out;
+}
+@media only screen and (min-width: 768px) {
+  html body header .block-content .block-name {
+    transform: scale(1.3);
+  }
+}
+html body header .block-content .block-name h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+@media only screen and (min-width: 768px) {
+  html body header .block-content .block-name h1 {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body header .block-content .block-name h1 {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body header .block-content .block-name h1 {
+    font-size: 4rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body header .block-content .block-name h1 {
+    font-size: 4.5rem;
+  }
+}
+html body header .block-content .block-intro {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  transition: all 2s ease-in-out;
+}
+html body header .block-content .block-intro .intro-line {
+  overflow: hidden;
+}
+html body header .block-content .block-intro .intro-line:nth-child(1) .intro-inner {
+  transition-delay: 0.2s;
+}
+html body header .block-content .block-intro .intro-line:nth-child(2) .intro-inner {
+  transition-delay: 0.4s;
+}
+html body header .block-content .block-intro .intro-line:nth-child(3) .intro-inner {
+  transition-delay: 0.6s;
+}
+html body header .block-content .block-intro .intro-line .intro-inner {
+  opacity: 0.6;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 300;
+  position: relative;
+  top: 3rem;
+  transition: all 1.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media only screen and (min-width: 768px) {
+  html body header .block-content .block-intro .intro-line .intro-inner {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body header .block-content .block-intro .intro-line .intro-inner {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body header .block-content .block-intro .intro-line .intro-inner {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body header .block-content .block-intro .intro-line .intro-inner {
+    font-size: 1.7rem;
+  }
+}
+html body header .block-content .block-button {
+  display: grid;
+  margin-top: 3rem;
+  transition: all 2.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+html body header .block-content .block-button a {
+  justify-self: center;
+  text-decoration: none;
+  color: #000000;
+}
+html body header .block-content .block-button a span {
+  display: flex;
+}
+html body header .block-content .block-button a span .txt {
+  position: relative;
+  right: 0.5rem;
+  opacity: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-right: 0.2rem;
+  transition: all 0.25s ease-in-out;
+}
+@media only screen and (min-width: 1366px) {
+  html body header .block-content .block-button a span .txt {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body header .block-content .block-button a span .txt {
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body header .block-content .block-button a span .txt {
+    font-size: 1.5rem;
+  }
+}
+html body header .block-content .block-button a span .icon i {
+  margin: auto;
+  font-size: 16px;
+}
+@media only screen and (min-width: 1366px) {
+  html body header .block-content .block-button a span .icon i {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body header .block-content .block-button a span .icon i {
+    font-size: 22px;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body header .block-content .block-button a span .icon i {
+    font-size: 26px;
+  }
+}
+html body header .block-content .block-button a:hover .txt {
+  right: 0;
+}
+html body main {
+  grid-area: body;
+  transform: translate3d(0, 0, 0) skewY(0);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: none;
+}
+html body main h1 {
+  font-weight: 900;
+}
+html body main h2 {
+  font-weight: 600;
+}
+html body main h3 {
+  font-weight: 400;
+}
+html body main section {
+  transform: translate3d(0, 0, 0) skewY(0);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+html body main .sect {
+  background-color: #ffffff;
+  margin: 0;
+  overflow: hidden;
+}
+html body main .sect .grid {
+  display: grid;
+  grid-column-gap: 15px;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 4rem 1rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect .grid {
+    padding: 3rem 2rem;
+    margin: 2rem 0;
+    grid-column-gap: 30px;
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect .grid {
+    padding: 5rem 3rem;
+    margin: 5rem 0;
+  }
+}
+html body main .sect .grid .title {
+  position: sticky;
+  bottom: 0;
+}
+html body main .sect .grid .title .inner {
+  overflow: hidden;
+}
+html body main .sect .grid .title .inner h1 {
+  display: flex;
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect .grid .title .inner h1 {
+    font-size: 1.1rem;
+    letter-spacing: 0.5rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect .grid .title .inner h1 {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect .grid .title .inner h1 {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect .grid .title .inner h1 {
+    font-size: 2rem;
+  }
+}
+html body main .sect .grid .title .inner h1 span {
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+html body main .sect .grid .title .inner h1 span:nth-child(1) {
+  transition-delay: 0ms;
+}
+html body main .sect .grid .title .inner h1 span:nth-child(2) {
+  transition-delay: 125ms;
+}
+html body main .sect .grid .title .inner h1 span:nth-child(3) {
+  transition-delay: 250ms;
+}
+html body main .sect .grid .title .inner h1 span:nth-child(4) {
+  transition-delay: 375ms;
+}
+html body main .sect .grid .title .inner h1 span:nth-child(5) {
+  transition-delay: 500ms;
+}
+html body main .sect .grid .title .inner h1 span:nth-child(6) {
+  transition-delay: 625ms;
+}
+html body main .sect .grid .title .inner h1 span:nth-child(7) {
+  transition-delay: 750ms;
+}
+html body main .sect .grid .title .inner h1 span:nth-child(8) {
+  transition-delay: 875ms;
+}
+html body main .sect .grid .title .inner h1 span:nth-child(9) {
+  transition-delay: 1000ms;
+}
+html body main .sect .grid .title.left {
+  grid-column: 1 / span 4;
+  justify-self: start;
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect .grid .title.left {
+    grid-column: 2 / span 3;
+  }
+}
+html body main .sect .grid .title.left .inner {
+  text-align: left;
+}
+html body main .sect .grid .title.right {
+  grid-column: -1 / span 2;
+  justify-self: end;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect .grid .title.right {
+    grid-column: 9 / span 4;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect .grid .title.right {
+    grid-column: 10 / span 3;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect .grid .title.right {
+    grid-column: 10 / span 3;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect .grid .title.right {
+    grid-column: 9 / span 3;
+  }
+}
+html body main .sect .grid .title.right .inner {
+  text-align: right;
+}
+html body main .sect .grid .slogan .inner {
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+html body main .sect .grid .slogan .inner h3 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-top: 0;
+}
+html body main .sect .grid .slogan .inner h3 strong {
+  font-weight: 600;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect .grid .slogan .inner h3 {
+    font-size: 5rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect .grid .slogan .inner h3 {
+    font-size: 6rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect .grid .slogan .inner h3 {
+    font-size: 7rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect .grid .slogan .inner h3 {
+    font-size: 10rem;
+  }
+}
+html body main .sect .grid .slogan.left {
+  grid-column: 1 / span 6;
+  justify-self: start;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect .grid .slogan.left {
+    grid-column: 1 / span 11;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect .grid .slogan.left {
+    grid-column: 2 / span 8;
+  }
+}
+html body main .sect .grid .slogan.left .inner {
+  text-align: left;
+}
+html body main .sect .grid .slogan.right {
+  grid-column: 1 / span 8;
+  justify-self: end;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect .grid .slogan.right {
+    grid-column: 1 / span 12;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect .grid .slogan.right {
+    grid-column: 3 / span 10;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect .grid .slogan.right {
+    grid-column: 3 / span 10;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect .grid .slogan.right {
+    grid-column: 3 / span 9;
+  }
+}
+html body main .sect .grid .slogan.right .inner {
+  text-align: right;
+}
+html body main .sect .grid .para .inner {
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+html body main .sect .grid .para .inner p {
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect .grid .para .inner p {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect .grid .para .inner p {
+    font-size: 1.3rem;
+  }
+}
+html body main .sect .grid .sub {
+  position: relative;
+  top: 6rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect .grid .sub {
+    top: 10rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect .grid .sub {
+    top: 15rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect .grid .sub {
+    top: 18rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect .grid .sub {
+    top: 20rem;
+  }
+}
+html body main .sect .grid .sub .inner {
+  display: grid;
+  overflow: hidden;
+}
+html body main .sect .grid .sub .inner h3 {
+  font-size: 1rem;
+  text-align: left;
+  margin: 0;
+  transition: all 0.85s cubic-bezier(0.23, 1, 0.32, 1) 0.15s, opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.15s, color 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect .grid .sub .inner h3 {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect .grid .sub .inner h3 {
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect .grid .sub .inner h3 {
+    font-size: 4.5rem;
+  }
+}
+html body main .sect .grid .sub .inner h3:nth-child(1) {
+  transition-delay: 0ms;
+}
+html body main .sect .grid .sub .inner h3:nth-child(2) {
+  transition-delay: 125ms;
+}
+html body main .sect.colored {
+  background-color: #f8f8f8;
+}
+html body main #sect-best .grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 1rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-best .grid {
+    padding: 4rem 1rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-best .grid {
+    padding: 2rem 3rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main #sect-best .grid {
+    padding: 5rem 3rem;
+  }
+}
+html body main #sect-best .grid .title {
+  margin-bottom: 2rem;
+  justify-self: center;
+  grid-column: 3 / span 6;
+  transition: all 1.2s ease-in-out;
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-best .grid .title {
+    margin-bottom: 3rem;
+    grid-column: 2 / span 10;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-best .grid .title {
+    margin-bottom: 5rem;
+    grid-column: 2 / span 10;
+  }
+}
+html body main #sect-best .grid .title h1 {
+  color: #000000;
+  align-items: center;
+}
+html body main #sect-best .grid .title h1:after,
+html body main #sect-best .grid .title h1:before {
+  content: "";
+  height: 1px;
+  width: 5rem;
+  background: #000000;
+  margin: 0 1rem;
+  transition: all 1s ease;
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-best .grid .title h1:after,
+  html body main #sect-best .grid .title h1:before {
+    width: 10rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-best .grid .title h1:after,
+  html body main #sect-best .grid .title h1:before {
+    width: 13rem;
+  }
+}
+html body main #sect-best .grid .block-gallery {
+  width: 100%;
+}
+html body main #sect-best .grid .block-gallery .wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow: scroll;
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-best .grid .block-gallery .wrapper {
+    justify-content: space-around;
+    overflow: hidden;
+  }
+}
+html body main #sect-best .grid .block-gallery .wrapper .item {
+  opacity: 0;
+  margin: 0 1.5rem;
+  padding: 1rem 0;
+  transform: translateY(50%);
+  transition: transform 2.5s ease, opacity 2.3s ease;
+}
+@media only screen and (min-width: 375px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item {
+    margin: 0 2rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item {
+    margin: 0 8rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item {
+    padding: 2rem 0;
+    margin: 0 2rem;
+  }
+}
+html body main #sect-best .grid .block-gallery .wrapper .item:nth-child(1) {
+  transition-delay: 375ms;
+}
+html body main #sect-best .grid .block-gallery .wrapper .item:nth-child(3) {
+  transition-delay: 375ms;
+}
+html body main #sect-best .grid .block-gallery .wrapper .item a img {
+  width: 15rem;
+  box-shadow: 0 27px 53px 0 rgba(208, 208, 208, 0.24);
+  transition: all 0.5s ease;
+}
+html body main #sect-best .grid .block-gallery .wrapper .item a img:hover {
+  cursor: pointer;
+  transform: translateY(-2%);
+  filter: drop-shadow(0px 7px 5px rgba(0, 0, 0, 0.25));
+}
+@media only screen and (min-width: 375px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item a img {
+    width: 17.5rem;
+  }
+}
+@media only screen and (min-width: 425px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item a img {
+    width: 21rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item a img {
+    width: 30rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item a img {
+    width: 22rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item a img {
+    width: 24rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item a img {
+    width: 40rem;
+  }
+}
+html body main #sect-best .grid .block-gallery .wrapper .item .block-text {
+  text-align: center;
+}
+html body main #sect-best .grid .block-gallery .wrapper .item .block-text h5 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item .block-text h5 {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item .block-text h5 {
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item .block-text h5 {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item .block-text h5 {
+    font-size: 2rem;
+  }
+}
+html body main #sect-best .grid .block-gallery .wrapper .item .block-text h6 {
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 0;
+  opacity: 0.4;
+  font-size: 0.6rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item .block-text h6 {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item .block-text h6 {
+    font-size: 0.65rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item .block-text h6 {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main #sect-best .grid .block-gallery .wrapper .item .block-text h6 {
+    font-size: 1rem;
+  }
+}
+html body main .sect-about {
+  height: auto;
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-about .grid {
+    padding-bottom: 20rem;
+  }
+}
+html body main .sect-about .grid .para {
+  grid-column: 1 / span 6;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-about .grid .para {
+    grid-column: 2 / span 10;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-about .grid .para {
+    grid-column: 4 / span 6;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect-about .grid .para {
+    grid-column: 4 / span 4;
+  }
+}
+html body main .sect-about .grid .para .block-current {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-about .grid .para .block-current {
+    display: inline-flex;
+  }
+}
+html body main .sect-about .grid .para .block-current .text {
+  margin-right: 0;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-about .grid .para .block-current .text {
+    margin-right: 2rem;
+  }
+}
+html body main .sect-about .grid .para .block-current .text h4 {
+  margin-bottom: 0;
+  font-size: 0.75rem;
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-about .grid .para .block-current .text h4 {
+    font-size: 0.85rem;
+  }
+}
+html body main .sect-about .grid .para .block-current .text p {
+  margin-top: 0;
+  font-size: 0.9rem;
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-about .grid .para .block-current .text p {
+    font-size: 1.1rem;
+  }
+}
+html body main .sect-about .grid .para .block-current .currently {
+  transition-delay: 0ms;
+}
+html body main .sect-about .grid .para .block-current .learning {
+  transition-delay: 125ms;
+}
+html body main .sect-about .grid .para .block-current .side {
+  margin-right: 0;
+  transition-delay: 250ms;
+}
+html body main .sect-about .grid .profile {
+  grid-column: 1 / span 6;
+  justify-self: center;
+  position: relative;
+  top: 2rem;
+  overflow: hidden;
+  transform: translateY(0%);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-about .grid .profile {
+    grid-column: 5 / span 8;
+    top: 2rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-about .grid .profile {
+    grid-column: 8 / span 4;
+    transform: translateY(25%);
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-about .grid .profile {
+    grid-column: 8 / span 3;
+    transform: translateY(50%);
+  }
+}
+html body main .sect-about .grid .profile:hover {
+  cursor: pointer;
+}
+html body main .sect-about .grid .profile:hover img {
+  transform: scale(1.05);
+}
+html body main .sect-about .grid .profile .inner {
+  transition: all 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+html body main .sect-about .grid .profile .inner img {
+  width: 18rem;
+  transition: transform 2s linear;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-about .grid .profile .inner img {
+    width: 25rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-about .grid .profile .inner img {
+    width: 30rem;
+  }
+}
+html body main .sect-works {
+  height: auto;
+}
+html body main .sect-works .grid .work-container {
+  grid-column: 1 / span 8;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-works .grid .work-container {
+    grid-column: 1 / span 12;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-works .grid .work-container {
+    grid-column: 1 / span 12;
+  }
+}
+html body main .sect-works .grid .work-container .inner .list {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-works .grid .work-container .inner .list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect-works .grid .work-container .inner .list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+html body main .sect-works .grid .work-container .inner .list .item {
+  padding: 0;
+  margin: 2rem 0;
+  position: relative;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+html body main .sect-works .grid .work-container .inner .list .item:nth-child(1) {
+  transition-delay: 0ms;
+}
+html body main .sect-works .grid .work-container .inner .list .item:nth-child(2) {
+  transition-delay: 125ms;
+}
+html body main .sect-works .grid .work-container .inner .list .item:nth-child(3) {
+  transition-delay: 250ms;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-works .grid .work-container .inner .list .item {
+    justify-self: center;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect-works .grid .work-container .inner .list .item {
+    margin: 5rem 0;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-works .grid .work-container .inner .list .item {
+    margin: 6rem 0;
+  }
+}
+html body main .sect-works .grid .work-container .inner .list .item .block-image {
+  width: 16rem;
+  height: 16rem;
+  padding: 1rem;
+  margin: 0 auto;
+  display: grid;
+  background: #f8f8f8;
+  overflow: hidden;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-works .grid .work-container .inner .list .item .block-image {
+    width: 20rem;
+    height: 20rem;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-works .grid .work-container .inner .list .item .block-image {
+    width: 30rem;
+    height: 30rem;
+    display: flex;
+    justify-self: start;
+    margin-left: 0;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect-works .grid .work-container .inner .list .item .block-image {
+    width: 26rem;
+    height: 26rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-works .grid .work-container .inner .list .item .block-image {
+    width: 40rem;
+    height: 40rem;
+    justify-self: center;
+  }
+}
+html body main .sect-works .grid .work-container .inner .list .item .block-image:hover {
+  cursor: pointer;
+}
+html body main .sect-works .grid .work-container .inner .list .item .block-image:hover img {
+  transform: scale(1.1);
+}
+html body main .sect-works .grid .work-container .inner .list .item .block-image img {
+  width: 100%;
+  height: auto;
+  margin: auto 0;
+  align-self: center;
+  transition: transform 2s linear;
+}
+html body main .sect-works .grid .work-container .inner .list .item .block-text {
+  text-align: center;
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-works .grid .work-container .inner .list .item .block-text {
+    align-self: center;
+  }
+}
+html body main .sect-works .grid .work-container .inner .list .item .block-text .title {
+  padding: 0;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-works .grid .work-container .inner .list .item .block-text .title {
+    padding: 1rem;
+  }
+}
+html body main .sect-works .grid .work-container .inner .list .item .block-text .title h1 {
+  font-weight: 600;
+  font-size: 1.3rem;
+  position: relative;
+  margin: 0;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-works .grid .work-container .inner .list .item .block-text .title h1 {
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-works .grid .work-container .inner .list .item .block-text .title h1 {
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect-works .grid .work-container .inner .list .item .block-text .title h1 {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-works .grid .work-container .inner .list .item .block-text .title h1 {
+    font-size: 2.5rem;
+  }
+}
+html body main .sect-works .grid .work-container .inner .list .item .block-text .title h6 {
+  margin: 0;
+  opacity: 0.4;
+  letter-spacing: 2px;
+  font-size: 0.6rem;
+  font-weight: 400;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-works .grid .work-container .inner .list .item .block-text .title h6 {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-works .grid .work-container .inner .list .item .block-text .title h6 {
+    font-size: 0.65rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect-works .grid .work-container .inner .list .item .block-text .title h6 {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-works .grid .work-container .inner .list .item .block-text .title h6 {
+    font-size: 1rem;
+  }
+}
+html body main .sect-works .grid .work-container .inner .list .item .block-text .block-button {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+}
+html body main .sect-works .grid .work-container .inner .list .item .block-text .block-button .button {
+  margin: 1rem 0;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-works .grid .work-container .inner .list .item .block-text .block-button .button {
+    margin: 0 1rem;
+  }
+}
+html body main .sect-works .grid .work-container .inner .list .item .block-text .block-button .button a {
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding: 0.5rem 2rem;
+  color: #ffffff;
+  background-color: #000000;
+  text-decoration: none;
+  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) 0.3s;
+}
+html body main .sect-works .grid .work-container .inner .list .item .block-text .block-button .button a:hover {
+  background-color: #FFD369;
+  color: #000000;
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-works .grid .work-container .inner .list .item .block-text .block-button .button a {
+    padding: 1rem 3rem;
+    font-size: 1rem;
+  }
+}
+html body main .sect-works .grid .work-container .inner .list .item .block-text .block-button .button-yellow a {
+  background-color: #FFD369;
+  color: #000000;
+}
+html body main .sect-works .grid .work-container .inner .list .item .block-text .block-button .button-yellow a:hover {
+  background-color: #000000;
+  color: #FFD369;
+}
+html body main .sect-works .grid .work-container .inner .list.right {
+  padding-left: 5rem;
+}
+html body main .sect-works .grid .slogan.how {
+  grid-column: 1 / span 8;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-works .grid .slogan.how {
+    grid-column: 2 / span 10;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-works .grid .slogan.how {
+    grid-column: 1 / span 12;
+  }
+}
+html body main .sect-works .grid .slogan.how h3 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-works .grid .slogan.how h3 {
+    margin-top: 3rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-works .grid .slogan.how h3 {
+    margin-top: 7rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-works .grid .slogan.how h3 {
+    margin-top: 12rem;
+  }
+}
+html body main .sect-works .grid .para {
+  grid-column: 1 / span 8;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-works .grid .para {
+    grid-column: 2 / span 10;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-works .grid .para {
+    grid-column: 3 / span 4;
+    text-align: left;
+  }
+}
+html body main .sect-works .grid .steps {
+  grid-column: 2 / span 6;
+  display: grid;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-works .grid .steps {
+    grid-column: 1 / span 12;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-works .grid .steps {
+    grid-column: 2 / span 10;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-works .grid .steps {
+    grid-column: 3 / span 8;
+  }
+}
+html body main .sect-works .grid .steps .inner {
+  display: block;
+  justify-self: center;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-works .grid .steps .inner {
+    display: grid;
+    grid-template-columns: repeat(3, 13rem);
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-works .grid .steps .inner {
+    display: grid;
+    grid-template-columns: repeat(3, 22rem);
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-works .grid .steps .inner {
+    display: grid;
+    grid-template-columns: repeat(3, 30rem);
+  }
+}
+html body main .sect-works .grid .steps .inner .text {
+  margin-bottom: 4rem;
+  text-align: center;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+html body main .sect-works .grid .steps .inner .text:nth-child(1) {
+  transition-delay: 0ms;
+}
+html body main .sect-works .grid .steps .inner .text:nth-child(2) {
+  transition-delay: 125ms;
+}
+html body main .sect-works .grid .steps .inner .text:nth-child(3) {
+  transition-delay: 250ms;
+}
+html body main .sect-works .grid .steps .inner .text h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-works .grid .steps .inner .text h4 {
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-works .grid .steps .inner .text h4 {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-works .grid .steps .inner .text h4 {
+    font-size: 2.5rem;
+  }
+}
+html body main .sect-works .grid .steps .inner .text p {
+  opacity: 0.6;
+  font-size: 0.8rem;
+  text-align: center;
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-works .grid .steps .inner .text p {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect-works .grid .steps .inner .text p {
+    margin-right: 1.2rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-works .grid .steps .inner .text p {
+    margin-right: 1.3rem;
+  }
+}
+html body main .sect-skills .grid .card-wrapper {
+  grid-column: 1 / span 6;
+  display: block;
+  padding: 2rem 0;
+  width: 100%;
+  justify-self: center;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-skills .grid .card-wrapper {
+    padding: 5rem 0;
+    display: grid;
+    grid-template-areas: "card";
+    grid-column: 2 / span 10;
+  }
+}
+html body main .sect-skills .grid .card-wrapper .card {
+  align-self: center;
+  justify-self: center;
+  position: relative;
+  display: block;
+  width: 12rem;
+  height: 15rem;
+  padding: 1rem;
+  transition: transform 0.88s cubic-bezier(0.23, 1, 0.32, 1) 0.07s;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-skills .grid .card-wrapper .card {
+    display: inline-flex;
+    width: 15rem;
+    height: 17rem;
+    padding: 2rem;
+    grid-area: card;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect-skills .grid .card-wrapper .card {
+    padding: 4rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-skills .grid .card-wrapper .card {
+    width: 30rem;
+    height: 30rem;
+  }
+}
+html body main .sect-skills .grid .card-wrapper .card:hover {
+  cursor: pointer;
+}
+html body main .sect-skills .grid .card-wrapper .card .title h3 {
+  font-weight: 900;
+  text-align: left;
+  margin: 0;
+  color: #000000;
+  font-size: 1.5rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-skills .grid .card-wrapper .card .title h3 {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-skills .grid .card-wrapper .card .title h3 {
+    font-size: 4rem;
+  }
+}
+html body main .sect-skills .grid .card-wrapper .card .contents ul {
+  padding: 0;
+}
+html body main .sect-skills .grid .card-wrapper .card .contents ul li {
+  padding: 0.5rem 0;
+  list-style: none;
+  font-size: 0.8rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-skills .grid .card-wrapper .card .contents ul li {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-skills .grid .card-wrapper .card .contents ul li {
+    font-size: 1.5rem;
+  }
+}
+html body main .sect-skills .grid .card-wrapper #card-dev {
+  background: #F8FB02;
+  transform: rotate(-21deg);
+  right: 0;
+  top: 0;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-skills .grid .card-wrapper #card-dev {
+    right: 9rem;
+    bottom: 5rem;
+    transform: rotate(-30deg);
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-skills .grid .card-wrapper #card-dev {
+    right: 20rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-skills .grid .card-wrapper #card-dev {
+    right: 40 rem;
+  }
+}
+html body main .sect-skills .grid .card-wrapper #card-util {
+  background: #72FF71;
+  right: 0;
+  bottom: 5rem;
+  transform: rotate(10deg);
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-skills .grid .card-wrapper #card-util {
+    bottom: 6rem;
+    transform: rotate(-12deg);
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-skills .grid .card-wrapper #card-util {
+    bottom: 0;
+    right: 7rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-skills .grid .card-wrapper #card-util {
+    right: 12rem;
+    bottom: 5rem;
+  }
+}
+html body main .sect-skills .grid .card-wrapper #card-server {
+  background: #FF0000;
+  bottom: 10rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-skills .grid .card-wrapper #card-server {
+    bottom: 0rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-skills .grid .card-wrapper #card-server {
+    left: 7rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-skills .grid .card-wrapper #card-server {
+    bottom: 0rem;
+    left: 12rem;
+  }
+}
+html body main .sect-skills .grid .card-wrapper #card-design {
+  background: #02FFFF;
+  transform: rotate(21deg);
+  left: 0;
+  bottom: 10rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-skills .grid .card-wrapper #card-design {
+    transform: rotate(16deg);
+    left: 9rem;
+    top: 0;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-skills .grid .card-wrapper #card-design {
+    left: 20rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-skills .grid .card-wrapper #card-design {
+    left: 40rem;
+  }
+}
+html body main .sect-education .grid .title.left {
+  grid-column: 1 / span 6;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-education .grid .title.left {
+    grid-column: 1 / span 10;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-education .grid .title.left {
+    grid-column: 2 / span 10;
+  }
+}
+html body main .sect-education .grid .slogan.left {
+  grid-column: 1 / span 6;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-education .grid .slogan.left {
+    grid-column: 1 / span 6;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-education .grid .slogan.left {
+    grid-column: 2 / span 5;
+  }
+}
+html body main .sect-education .grid .para {
+  align-self: center;
+  grid-column: 1 / span 6;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-education .grid .para {
+    grid-column: 7 / span 6;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-education .grid .para {
+    grid-column: 7 / span 5;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect-education .grid .para {
+    grid-column: 7 / span 3;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-education .grid .para {
+    grid-column: 7 / span 3;
+  }
+}
+html body main .sect-education .grid .para .block-current {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-education .grid .para .block-current {
+    display: inline-flex;
+  }
+}
+html body main .sect-education .grid .para .block-current .text {
+  margin-right: 0;
+  transition: all 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-education .grid .para .block-current .text {
+    margin-right: 2rem;
+  }
+}
+html body main .sect-education .grid .para .block-current .text h4 {
+  margin-bottom: 0;
+  font-size: 0.75rem;
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-education .grid .para .block-current .text h4 {
+    font-size: 0.85rem;
+  }
+}
+html body main .sect-education .grid .para .block-current .text p {
+  margin-top: 0;
+  font-size: 0.9rem;
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-education .grid .para .block-current .text p {
+    font-size: 1.1rem;
+  }
+}
+html body main .sect-education .grid .para .block-current .currently {
+  transition-delay: 0ms;
+}
+html body main .sect-education .grid .para .block-current .learning {
+  transition-delay: 125ms;
+}
+html body main .sect-education .grid .para .block-current .side {
+  margin-right: 0;
+  transition-delay: 250ms;
+}
+html body main .sect-education .grid .course-wrapper {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  grid-column: 1 / span 6;
+  margin-top: 2rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-education .grid .course-wrapper {
+    margin-top: 1rem;
+    grid-column: 1 / span 12;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-education .grid .course-wrapper {
+    margin-top: 0;
+    grid-column: 2 / span 10;
+  }
+}
+html body main .sect-education .grid .course-wrapper .inner {
+  display: grid;
+}
+html body main .sect-education .grid .course-wrapper .inner ul {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  align-content: flex-end;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-education .grid .course-wrapper .inner ul {
+    flex-direction: row;
+  }
+}
+html body main .sect-education .grid .course-wrapper .inner ul li {
+  list-style: none;
+  align-self: center;
+  justify-self: center;
+}
+html body main .sect-education .grid .course-wrapper .inner ul li:nth-child(2) a img {
+  width: 5rem;
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect-education .grid .course-wrapper .inner ul li:nth-child(2) a img {
+    width: 9rem;
+  }
+}
+html body main .sect-education .grid .course-wrapper .inner ul li:nth-child(3) a img {
+  width: 5rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-education .grid .course-wrapper .inner ul li:nth-child(3) a img {
+    width: 6rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-education .grid .course-wrapper .inner ul li:nth-child(3) a img {
+    width: 8rem;
+  }
+}
+html body main .sect-education .grid .course-wrapper .inner ul li:nth-child(4) a img {
+  width: 4rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-education .grid .course-wrapper .inner ul li:nth-child(4) a img {
+    width: 5.5rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-education .grid .course-wrapper .inner ul li:nth-child(4) a img {
+    width: 7rem;
+  }
+}
+html body main .sect-education .grid .course-wrapper .inner ul li a img {
+  width: 6rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-education .grid .course-wrapper .inner ul li a img {
+    width: 8rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-education .grid .course-wrapper .inner ul li a img {
+    width: 12rem;
+  }
+}
+html body main .sect-contact {
+  background: #000000;
+  z-index: 90;
+}
+html body main .sect-contact .grid .title {
+  justify-self: center;
+  grid-column: 1 / span 6;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-contact .grid .title {
+    grid-column: 3 / span 8;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-contact .grid .title {
+    grid-column: 2 / span 10;
+  }
+}
+html body main .sect-contact .grid .title h1 {
+  color: #ffffff;
+}
+html body main .sect-contact .grid .slogan {
+  grid-column: 1 / span 6;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-contact .grid .slogan {
+    grid-column: 2 / span 10;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-contact .grid .slogan {
+    grid-column: 1 / span 12;
+  }
+}
+html body main .sect-contact .grid .slogan h3 {
+  text-align: center;
+  color: #ffffff;
+}
+html body main .sect-contact .grid .para {
+  text-align: center;
+  align-self: center;
+  grid-column: 1 / span 6;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-contact .grid .para {
+    grid-column: 2 / span 10;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-contact .grid .para {
+    grid-column: 4 / span 6;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect-contact .grid .para {
+    grid-column: 5 / span 4;
+  }
+}
+html body main .sect-contact .grid .para .inner p {
+  color: #ffffff;
+  opacity: 0.6;
+}
+html body main .sect-contact .grid .socials {
+  display: grid;
+  grid-column: 1 / span 6;
+  margin-top: 3rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-contact .grid .socials {
+    grid-column: 1 / span 12;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-contact .grid .socials {
+    margin-top: 5rem;
+    grid-column: 4 / span 6;
+  }
+}
+html body main .sect-contact .grid .socials ul {
+  display: grid;
+  grid-template-columns: repeat(2, 8rem);
+  grid-template-rows: repeat(4, 5rem);
+  padding: 0;
+  justify-self: center;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-contact .grid .socials ul {
+    grid-template-columns: repeat(4, 8rem);
+    grid-template-rows: repeat(2, 6rem);
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect-contact .grid .socials ul {
+    grid-template-columns: repeat(4, 8rem);
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-contact .grid .socials ul {
+    grid-template-columns: repeat(4, 12rem);
+  }
+}
+html body main .sect-contact .grid .socials ul li {
+  display: grid;
+  list-style: none;
+  transition: all 1.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+html body main .sect-contact .grid .socials ul li:hover a {
+  opacity: 0.9;
+}
+html body main .sect-contact .grid .socials ul li:nth-child(1) {
+  transition-delay: 0ms;
+}
+html body main .sect-contact .grid .socials ul li:nth-child(2) {
+  transition-delay: 125ms;
+}
+html body main .sect-contact .grid .socials ul li:nth-child(3) {
+  transition-delay: 250ms;
+}
+html body main .sect-contact .grid .socials ul li:nth-child(4) {
+  transition-delay: 375ms;
+}
+html body main .sect-contact .grid .socials ul li:nth-child(5) {
+  transition-delay: 500ms;
+}
+html body main .sect-contact .grid .socials ul li:nth-child(6) {
+  transition-delay: 625ms;
+}
+html body main .sect-contact .grid .socials ul li:nth-child(7) {
+  transition-delay: 750ms;
+}
+html body main .sect-contact .grid .socials ul li:nth-child(8) {
+  transition-delay: 875ms;
+}
+html body main .sect-contact .grid .socials ul li a {
+  text-decoration: none;
+  opacity: 0.6;
+  color: #ffffff;
+  padding: 2rem;
+  align-self: center;
+  justify-self: center;
+}
+html body main .sect-contact .grid .socials ul li a i {
+  font-size: 1.8rem;
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect-contact .grid .socials ul li a i {
+    font-size: 2.8rem;
+  }
+}
+html body main .sect-copy {
+  background: #1e1e1e;
+  z-index: 90;
+}
+html body main .sect-copy .grid {
+  margin: 1rem 0.5rem;
+  padding: 0;
+}
+html body main .sect-copy .grid .text {
+  justify-self: center;
+  grid-column: 1 / span 6;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-copy .grid .text {
+    grid-column: 2 / span 10;
+  }
+}
+html body main .sect-copy .grid .text p {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 0.5rem;
+  letter-spacing: 0.5px;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect-copy .grid .text p {
+    font-size: 0.7em;
+  }
+}
